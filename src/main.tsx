@@ -6,6 +6,7 @@ import App from './App.tsx';
 import { Main } from './components/main/main.tsx';
 import Cart from './pages/Cart.tsx';
 import Wishlist from './pages/Wishlist.tsx';
+import Test from './pages/Test.tsx';
 
 const router = createBrowserRouter([
   {
@@ -17,10 +18,14 @@ const router = createBrowserRouter([
       { path: 'wishlist', Component: Wishlist },
     ],
   },
+  {
+    path: '/test',
+    element: <Test />,
+  },
 ]);
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+  // <StrictMode>
+  <RouterProvider router={router} />
+  // </StrictMode>
 );
