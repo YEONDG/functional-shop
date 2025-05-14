@@ -1,34 +1,33 @@
-import * as React from 'react';
+import { useForm, useController, UseControllerProps } from 'react-hook-form';
 
-import MyComponent from '../components/test/MyComponent';
-import { MyFormData } from '../components/test/FormData';
+let renderCount = 0;
 
-export default function Test() {
-  const [data, setData] = React.useState<any>({
-    myfield: [], // 초기값을 MyFormData 타입에 맞게 설정
-  });
-
-  console.log(data, '데이터를 확인하겠습니다. 우와와와아오와와왕와아');
-
-  const onFormDataUpdated = (updated: MyFormData) => {
-    setData((prevData: MyFormData) => {
-      // 실제로 변경된 경우에만 state 업데이트
-      const currentStr = JSON.stringify(prevData);
-      const updatedStr = JSON.stringify(updated);
-
-      if (currentStr !== updatedStr) {
-        console.log('실제 변경 감지, 업데이트:', updated);
-        return updated;
-      } else {
-        console.log('동일한 데이터, 업데이트 스킵');
-        return prevData;
-      }
-    });
-  };
+function Input(props: UseControllerProps) {
+  const { field } = useController(props);
 
   return (
     <div>
-      <MyComponent model={data} onUpdate={onFormDataUpdated} />
+      <input {...field} type='number' placeholder={props.name} />
+      <p>
+        value: {JSON.stringify(field.value)} ({typeof field.value})
+      </p>
+    </div>
+  );
+}
+
+export default function Test() {
+  const { handleSubmit, control } = useForm({
+    defaultValues: {},
+    values: {}, // this line triggers the bug
+  });
+  renderCount++;
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit(console.log)}>
+        <Input control={control} name='views' defaultValue={null} />
+        <input type='submit' />
+      </form>
     </div>
   );
 }

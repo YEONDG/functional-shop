@@ -13,7 +13,7 @@ importers:
         version: 1.9.0
       '@hookform/resolvers':
         specifier: ^5.0.1
-        version: 5.0.1(react-hook-form@7.56.3(react@19.1.0))
+        version: 5.0.1(react-hook-form@7.55.0-next.8(react@19.1.0))
       '@tailwindcss/vite':
         specifier: ^4.1.4
         version: 4.1.4(vite@6.3.3(jiti@2.4.2)(lightningcss@1.29.2))
@@ -39,8 +39,8 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5(react@19.1.0)
       react-hook-form:
-        specifier: ^7.56.3
-        version: 7.56.3(react@19.1.0)
+        specifier: 7.55.0-next.8
+        version: 7.55.0-next.8(react@19.1.0)
       react-router:
         specifier: ^7.5.3
         version: 7.5.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1193,8 +1193,8 @@ packages:
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
 
-  react-hook-form@7.56.3:
-    resolution: {integrity: sha512-IK18V6GVbab4TAo1/cz3kqajxbDPGofdF0w7VHdCo0Nt8PrPlOZcuuDq9YYIV1BtjcX78x0XsldbQRQnQXWXmw==}
+  react-hook-form@7.55.0-next.8:
+    resolution: {integrity: sha512-COa8KK4crH0xaYlYrNFk+A9Qly81PPOyCAAQMj9bNLfaRukfVnxJe+8fTanl26zVY1nsMQWwvs7UtR3t5omAjA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -1647,10 +1647,10 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@hookform/resolvers@5.0.1(react-hook-form@7.56.3(react@19.1.0))':
+  '@hookform/resolvers@5.0.1(react-hook-form@7.55.0-next.8(react@19.1.0))':
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.56.3(react@19.1.0)
+      react-hook-form: 7.55.0-next.8(react@19.1.0)
 
   '@humanfs/core@0.19.1': {}
 
@@ -2404,7 +2404,7 @@ snapshots:
       react-fast-compare: 3.2.2
       shallowequal: 1.1.0
 
-  react-hook-form@7.56.3(react@19.1.0):
+  react-hook-form@7.55.0-next.8(react@19.1.0):
     dependencies:
       react: 19.1.0
 
